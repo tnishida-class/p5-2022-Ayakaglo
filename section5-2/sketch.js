@@ -6,7 +6,7 @@ function setup(){
   fill(0);
   crossmark(10, 10, 90, 90);
   ngmark(150, 50, 80);
-  star(250, 50, 40);
+  star(6,250, 50, 40);
 }
 
 function crossmark(x1, y1, x2, y2){
@@ -24,10 +24,9 @@ function ngmark(cx, cy, r){
   pop();
 }
 
-function star(cx, cy, r){
+function star(n,cx, cy, r){
   beginShape();
-  const n = 6
-  for(var i = 0; i < n; i++){
+    for(var i = 0; i < n; i++){
     let theta = TWO_PI * i / n;
     let x = cx + cos(theta) * r;
     let y = cy + sin(theta) * r;
