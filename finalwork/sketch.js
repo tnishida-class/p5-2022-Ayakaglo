@@ -7,31 +7,38 @@ function setup(){
   movement1 = 0;
   movement2 = 0
   movement3 = 0
+  movement4 = 0
 }
 
 function draw(x,y){
   background(255);
   noStroke();
-  lace(50,30,144,255,0,0,255, movement1);
-  lace(45,255,0,255,255,182,193, movement2);
-  lace(40,255,255,0,0,255,255,movement3);
-  movement1 += 0.03
-  movement2 -= 0.02
-  movement3 += 0.01
-  title(80,100,100,100,60);
+  lace(50,30,144,255,0,0,255, movement1,36);
+  lace(45,255,0,255,255,182,193, movement2,36);
+  lace(40,255,255,0,0,255,255,movement3,24);
+  lace(35,152,251,152,50,205,50,movement4,24);
+  movement1 += 0.008
+  movement2 -= 0.01
+  movement3 += 0.02
+  movement4 -= 0.03
+  title(15,78,72,93,93,108,123,100,100,70);
 }
 
- function title(t1,t2,x,y,r){
-      noStroke();
+ function title(ts,tw1,tw2,tw3,th1,th2,th3,x,y,r){
+   noStroke();
    fill(255,255,0);
    ellipse(x,y,r);
    fill(0);
-   text("GC IT",t1,t2,);
-      
+   textSize(ts);
+   text("Global",tw1,th1,);
+   textSize(ts);
+   text("Culture",tw2,th2,);
+   textSize(ts);
+   text("IT",tw3,th3,);
  }
-function lace(size,cr1,cg1,cb1,cr2,cg2,cb2, move){
-   for(let i = 0; i < 36; i++){
-    let theta = TWO_PI * i / 36 + move;
+function lace(size,cr1,cg1,cb1,cr2,cg2,cb2, move,en){
+   for(let i = 0; i < en; i++){
+    let theta = TWO_PI * i / en + move;
     x =100 + cos(theta) * size;
     y =100 + sin(theta) * size;
      if(i%2==0){
